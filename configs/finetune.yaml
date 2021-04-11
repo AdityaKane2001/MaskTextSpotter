@@ -1,7 +1,7 @@
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
   # WEIGHT: "./outputs/pretrain/model_pretrain.pth"
-  WEIGHT: "./outputs/finetune/model_finetune.pth"
+  WEIGHT: "/content/MaskTextSpotter/model_finetune.pth"
   BACKBONE:
     CONV_BODY: "R-50-FPN"
     OUT_CHANNELS: 256
