@@ -13,7 +13,7 @@ from .collate_batch import BatchCollator
 from .transforms import build_transforms
 
 
-def build_dataset(cfg,dataset_list, transforms, dataset_catalog, is_train=True):
+def build_dataset(cfg,dataset_list, dataset_catalog, transforms=None, is_train=True):
     """
     Arguments:
         dataset_list (list[str]): Contains the names of the datasets, i.e.,

@@ -5,4 +5,5 @@ from .icdar import IcdarDataset
 from .synthtext import SynthtextDataset
 from .scut import ScutDataset
 from .total_text import TotaltextDataset
-__all__ = ["COCODataset", "ConcatDataset","IcdarDataset","SynthtextDataset","MixDataset","ScutDataset","TotaltextDataset"]
+from .answersheet import AnswersheetDataset
+__all__ = ["AnswersheetDataset","COCODataset", "ConcatDataset","IcdarDataset","SynthtextDataset","MixDataset","ScutDataset","TotaltextDataset"]

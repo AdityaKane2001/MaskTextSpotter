@@ -63,6 +63,9 @@ class DatasetCatalog(object):
             "total_text/test_images",
             # "total_text/test_gts",
         ),
+        'answersheet':(
+            '/content/valid'
+        ),
         "scut-eng-char_train":(
             "scut-eng-char/train_images",
             "scut-eng-char/train_gts",
@@ -140,6 +143,25 @@ class DatasetCatalog(object):
                 args=args,
                 factory="TotaltextDataset",
             )
+
+        elif "answersheet" in name:
+            data_dir = DatasetCatalog.DATA_DIR
+            attrs = DatasetCatalog.DATASETS[name]
+            if len(attrs)>1:
+                gts_dir = os.path.join(data_dir,attrs[1])
+            else:
+                gts_dir = None
+            args = dict(
+                use_charann=False,
+                imgs_dir='/content/valid',
+                gts_dir=gts_dir,
+            )
+            return dict(
+                args=args,
+                factory="AnswersheetDataset",
+            )
+
+
         elif "scut-eng-char" in name:
             data_dir = DatasetCatalog.DATA_DIR
             attrs = DatasetCatalog.DATASETS[name]
